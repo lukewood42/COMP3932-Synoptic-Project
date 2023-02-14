@@ -7,10 +7,24 @@
 
 import SwiftUI
 import MapKit
+import Firebase
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
+}
+
 
 
 struct ContentView: View {
-    @State private var showingMap = false
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    @State private var loggedIn = false
+
     var body: some View {
         NavigationView {
         VStack {
@@ -28,9 +42,11 @@ struct ContentView: View {
                 Text("Map")
                 }
             }
-                
+            
         }
+        
         .edgesIgnoringSafeArea(.all)
+        
     }
         
 }
