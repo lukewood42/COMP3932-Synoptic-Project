@@ -39,7 +39,7 @@
 		456AC41D299BC88E00CFC9F0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 456AC41C299BC88E00CFC9F0 /* FirebaseStorage */; };
 		456AC41F299BC88E00CFC9F0 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 456AC41E299BC88E00CFC9F0 /* FirebaseStorageCombine-Community */; };
 		4582C613299BD50B00E23352 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582C612299BD50B00E23352 /* MainView.swift */; };
-		45D719C9299BA39C009BE01B /* ARProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D719C8299BA39C009BE01B /* ARProjectApp.swift */; };
+		4582C617299E9BAB00E23352 /* AugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582C616299E9BAB00E23352 /* AugView.swift */; };
 		45D719CB299BA39C009BE01B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D719CA299BA39C009BE01B /* ContentView.swift */; };
 		45D719CD299BA39E009BE01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D719CC299BA39E009BE01B /* Assets.xcassets */; };
 		45D719D0299BA39E009BE01B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D719CF299BA39E009BE01B /* Preview Assets.xcassets */; };
@@ -69,8 +69,9 @@
 		456AC3E3299BB3B300CFC9F0 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		456AC3E5299BC5B600CFC9F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4582C612299BD50B00E23352 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4582C616299E9BAB00E23352 /* AugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugView.swift; sourceTree = "<group>"; };
+		4582C618299E9CA400E23352 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		45D719C5299BA39C009BE01B /* ARProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		45D719C8299BA39C009BE01B /* ARProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARProjectApp.swift; sourceTree = "<group>"; };
 		45D719CA299BA39C009BE01B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		45D719CC299BA39E009BE01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45D719CF299BA39E009BE01B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -156,13 +157,14 @@
 		45D719C7299BA39C009BE01B /* ARProject */ = {
 			isa = PBXGroup;
 			children = (
-				45D719C8299BA39C009BE01B /* ARProjectApp.swift */,
+				4582C616299E9BAB00E23352 /* AugView.swift */,
 				45D719CA299BA39C009BE01B /* ContentView.swift */,
 				456AC3E3299BB3B300CFC9F0 /* MapView.swift */,
 				4582C612299BD50B00E23352 /* MainView.swift */,
 				45D719CC299BA39E009BE01B /* Assets.xcassets */,
 				456AC3E5299BC5B600CFC9F0 /* GoogleService-Info.plist */,
 				45D719CE299BA39E009BE01B /* Preview Content */,
+				4582C618299E9CA400E23352 /* Experience.rcproject */,
 			);
 			path = ARProject;
 			sourceTree = "<group>";
@@ -360,7 +362,7 @@
 				45D719CB299BA39C009BE01B /* ContentView.swift in Sources */,
 				4582C613299BD50B00E23352 /* MainView.swift in Sources */,
 				456AC3E4299BB3B300CFC9F0 /* MapView.swift in Sources */,
-				45D719C9299BA39C009BE01B /* ARProjectApp.swift in Sources */,
+				4582C617299E9BAB00E23352 /* AugView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
