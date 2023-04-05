@@ -1,0 +1,27 @@
+[
+  {
+    "libraryIdentifier" : "7930865497a9b692256f60b9a6743072",
+    "format" : "arObject",
+    "displayName" : "bottle test.arobject"
+  },
+  {
+    "libraryIdentifier" : "26d8394271f6328bbf8835cffa14dee9",
+    "format" : "arObject",
+    "displayName" : "bottle test 2.arobject"
+  },
+  {
+    "libraryIdentifier" : "d3edc20c6860e22a88303e5053af3c82",
+    "format" : "arObject",
+    "displayName" : "chair test.arobject"
+  },
+  {
+    "libraryIdentifier" : "8ff839c6a6d28d30878edc47a33b655d",
+    "format" : "arObject",
+    "displayName" : "bag test.arobject"
+  },
+  {
+    "libraryIdentifier" : "d0a20e0e93313c30900c61c37c4be76f",
+    "format" : "image",
+    "displayName" : "Testcard_F.jpeg"
+  }
+]
