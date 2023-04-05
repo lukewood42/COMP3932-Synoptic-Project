@@ -56,18 +56,22 @@ func checkIn(ArtID: (Int)) -> Void {
     let user = Auth.auth().currentUser
     if let user = user {
         let uid = user.uid
-        var ref: DocumentReference? = nil
-        ref = db.collection("check-ins").addDocument(data: [
-            "ArtID": 0,
-            "Time": Timestamp(),
-            "UserID": uid,
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-                
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                
+        let artRef = db.collection("users").document(uid).collection("art").document(String(ArtID))
+        artRef.getDocument { (document, error) in
+            guard let document = document, document.exists else {
+                print("Document does not exist")
+                return
+            }
+            
+            var data = document.data()
+            data?["checkedIn"] = true
+            
+            artRef.setData(data!, merge: true) { error in
+                if let error = error {
+                    print("Error updating document: \(error)")
+                } else {
+                    print("Document updated")
+                }
             }
         }
     }

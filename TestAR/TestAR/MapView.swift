@@ -46,14 +46,9 @@ struct PlaceAnnotationView: View {
     
         VStack {
             if favourite {
-                ZStack {
-                    Image(systemName: "star.circle.fill")
-                        .font(.title)
-                        .foregroundColor(checkedIn ? Color.green : Color.red)
-                    Image(systemName: "star.fill")
-                        .resizable()
-                        .foregroundColor(.yellow)
-                }
+                Image(systemName: "star.circle.fill")
+                .font(.title)
+                .foregroundStyle(Color.yellow, checkedIn ? Color.green : Color.red)
             }
             else {
                 Image(systemName: "mappin.circle.fill")

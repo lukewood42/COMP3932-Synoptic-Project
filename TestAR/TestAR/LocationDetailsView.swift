@@ -105,7 +105,6 @@ func toggleFavourite(ArtID: Int) {
             }
         }
     }
-    
 }
 
 struct LocationDetailsView_Previews: PreviewProvider {
