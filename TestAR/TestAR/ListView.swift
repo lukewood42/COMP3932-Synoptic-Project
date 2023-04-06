@@ -15,56 +15,31 @@ struct ListView: View {
         ZStack{
             gradient.opacity(0.25).ignoresSafeArea().blur(radius: 1)
             VStack{
-                if #available(iOS 16.0, *) {
-                    List(locationStore.locations) { location in
-                        NavigationLink(destination: LocationDetailsView(location: location)) {
-                            HStack(spacing: 10) {
-                                Image(location.name)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .padding(0.0)
-                                    .clipped()
-                                    .frame(width: 55, height: 50, alignment: .center)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                Text(location.name)
-                                    .font(.custom("Questrial", size: 20))
-                                if location.checkedIn{
+                List(locationStore.locations) { location in
+                    NavigationLink(destination: LocationDetailsView(location: location)) {
+                        HStack(spacing: 10) {
+                            Image(location.name)
+                                .resizable()
+                                .scaledToFill()
+                                .padding(0.0)
+                                .clipped()
+                                .frame(width: 55, height: 50, alignment: .center)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            Text(location.name)
+                            if location.checkedIn{
                                 Spacer()
-                                    Image(systemName:"checkmark.seal.fill")
-                                        .foregroundColor(.green)
-                                }
+                                Image(systemName:"checkmark.seal.fill")
+                                    .foregroundColor(.green)
                             }
                         }
                     }
-                    .scrollContentBackground(.hidden)
-                    .listStyle(.plain)
-                } else {
-                    List(locationStore.locations) { location in
-                        NavigationLink(destination: LocationDetailsView(location: location)) {
-                            HStack(spacing: 10) {
-                                Image(location.name)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .padding(0.0)
-                                    .clipped()
-                                    .frame(width: 55, height: 50, alignment: .center)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                Text(location.name)
-                                if location.checkedIn{
-                                Spacer()
-                                    Image(systemName:"checkmark.seal.fill")
-                                        .foregroundColor(.green)
-                                }
-                            }
-                        }
-                    }
-                    .listStyle(.plain)
                 }
+                .listStyle(.plain)
             }
         }
-        
     }
 }
+
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {

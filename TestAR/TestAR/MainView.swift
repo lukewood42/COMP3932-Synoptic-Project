@@ -47,6 +47,18 @@ struct MainView: View {
                     }
                 }
             }
+            HStack {
+                Spacer()
+                NavigationLink(destination: ListView()) {
+                    HStack {
+                        Image(systemName: "gear.circle.fill")
+                            .resizable()
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: 40, maxHeight: 40)
+                            .padding()
+                    }
+                }
+            }
         
             
         }

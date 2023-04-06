@@ -17,7 +17,6 @@ struct LoginView: View {
     
     let gradient = LinearGradient(colors: [Color.blue,Color.green],
                                       startPoint: .top, endPoint: .bottom)
-    let coral = UIColor(red: 1, green: 138/255, blue: 91/255, alpha: 1)
     var body: some View {
         NavigationView {
             ZStack{

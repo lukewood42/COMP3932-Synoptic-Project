@@ -56,6 +56,7 @@
 		4582C622299EADBA00E23352 /* AugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582C621299EADBA00E23352 /* AugView.swift */; };
 		45919F1729DA5C73002FA0E0 /* LocationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45919F1629DA5C73002FA0E0 /* LocationStore.swift */; };
 		45919F1929DA728E002FA0E0 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45919F1829DA728E002FA0E0 /* ListView.swift */; };
+		45ED2CF429DE0E9C00A4CEC4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED2CF329DE0E9C00A4CEC4 /* ProfileView.swift */; };
 		45F3EBF729C2576D006BA7CE /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3EBF629C2576D006BA7CE /* LocationDetailsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		4582C621299EADBA00E23352 /* AugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AugView.swift; sourceTree = "<group>"; };
 		45919F1629DA5C73002FA0E0 /* LocationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStore.swift; sourceTree = "<group>"; };
 		45919F1829DA728E002FA0E0 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		45ED2CF329DE0E9C00A4CEC4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		45F3EBF629C2576D006BA7CE /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,17 +184,18 @@
 				454E4E4D290021B2009C3EF9 /* ContentView.swift */,
 				4508629229C4E1620073F39C /* MainView.swift */,
 				4520486A29CB398200692BB9 /* LoginView.swift */,
+				4520486C29CCE28500692BB9 /* SignUpView.swift */,
+				4582C61F299EAC6E00E23352 /* MapView.swift */,
+				45ED2CF329DE0E9C00A4CEC4 /* ProfileView.swift */,
+				45919F1629DA5C73002FA0E0 /* LocationStore.swift */,
+				45919F1829DA728E002FA0E0 /* ListView.swift */,
+				45F3EBF629C2576D006BA7CE /* LocationDetailsView.swift */,
+				4582C621299EADBA00E23352 /* AugView.swift */,
 				4520487129CD46FD00692BB9 /* Questrial-Regular.ttf */,
 				4520486E29CD37D100692BB9 /* Neoneon-3zaD6.otf */,
-				4520486C29CCE28500692BB9 /* SignUpView.swift */,
 				454E4E4F290021B2009C3EF9 /* Experience.rcproject */,
 				454E4E51290021B9009C3EF9 /* Assets.xcassets */,
 				454E4E53290021B9009C3EF9 /* Preview Content */,
-				4582C61F299EAC6E00E23352 /* MapView.swift */,
-				45919F1629DA5C73002FA0E0 /* LocationStore.swift */,
-				45919F1829DA728E002FA0E0 /* ListView.swift */,
-				4582C621299EADBA00E23352 /* AugView.swift */,
-				45F3EBF629C2576D006BA7CE /* LocationDetailsView.swift */,
 				4508628E29C4E0560073F39C /* GoogleService-Info.plist */,
 			);
 			path = TestAR;
@@ -394,6 +397,7 @@
 				454E4E4E290021B2009C3EF9 /* ContentView.swift in Sources */,
 				4508629329C4E1620073F39C /* MainView.swift in Sources */,
 				4582C620299EAC6E00E23352 /* MapView.swift in Sources */,
+				45ED2CF429DE0E9C00A4CEC4 /* ProfileView.swift in Sources */,
 				454E4E4C290021B2009C3EF9 /* AppDelegate.swift in Sources */,
 				4582C622299EADBA00E23352 /* AugView.swift in Sources */,
 				45F3EBF729C2576D006BA7CE /* LocationDetailsView.swift in Sources */,

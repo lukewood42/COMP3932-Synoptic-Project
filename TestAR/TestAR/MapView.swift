@@ -18,8 +18,12 @@ let db = Firestore.firestore()
 let checkins = db.collection("check-ins")
 
 
+
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @ObservedObject private var locationStore = LocationStore()
     @Published var region = MKCoordinateRegion()
+    @Published var isWithinDistance = false
+    let distanceInMeters: CLLocationDistance = 100
     private let manager = CLLocationManager()
     override init() {
         super.init()
@@ -33,6 +37,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             let center = CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
             let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
             region = MKCoordinateRegion(center: center, span: span)
+            let userLocation = CLLocation(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
+                        for location in locationStore.locations {
+                            let locationCoordinate = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                            let distance = userLocation.distance(from: locationCoordinate)
+                            if distance <= distanceInMeters {
+                                self.isWithinDistance = true
+                                break
+                            } else {
+                                self.isWithinDistance = false
+                            }
+                        }
         }
     }
 }
@@ -67,7 +82,6 @@ struct PlaceAnnotationView: View {
 struct MapView: View {
     @ObservedObject private var locationStore = LocationStore()
     @StateObject private var manager = LocationManager()
-
     
     @Environment(\.dismiss) var dismiss
     
@@ -76,18 +90,32 @@ struct MapView: View {
     
     var body: some View {
         VStack{
-            Map(coordinateRegion: $mapRegion, showsUserLocation: true, annotationItems: locationStore.locations) { location in
-                MapAnnotation(coordinate: location.coordinate) {
-                    NavigationLink {
-                        LocationDetailsView(location: location)
-                    }
-                label: {
+            ZStack {
+                Map(coordinateRegion: $mapRegion, showsUserLocation: true, annotationItems: locationStore.locations) { location in
+                    MapAnnotation(coordinate: location.coordinate) {
+                        NavigationLink {
+                            LocationDetailsView(location: location)
+                        }
+                    label: {
                         PlaceAnnotationView(title: location.name, checkedIn: location.checkedIn, favourite: location.favourite)
+                        }
                     }
                 }
-                
+                .edgesIgnoringSafeArea(.all)
+    
+                VStack {
+                    if manager.isWithinDistance{
+                        Text("Art nearby")
+                            .font(.body)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(.blue)
+                            .clipShape(Capsule())
+                            .padding()
+                    }
+                    Spacer()
+                }
             }
-            .edgesIgnoringSafeArea(.all)
         }
     }
 }
