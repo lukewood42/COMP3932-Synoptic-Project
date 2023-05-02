@@ -87,7 +87,27 @@ class LocationStore: ObservableObject {
             }
         }
     }
-    
+    private func createDocuments(){
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let id = user.uid
+            let userDocument = db.collection("users").document(id)
+            let artCollection = userDocument.collection("art")
+            for i in 1...4 {
+                let artDocument = artCollection.document("\(i)")
+                artDocument.setData([
+                    "favourite": false,
+                    "checkedIn": false
+                ]) { error in
+                    if let error = error {
+                        print("Error adding document: \(error)")
+                    } else {
+                        print("Document \(i) successfully added")
+                    }
+                }
+            }
+        }
+    }
     // Listening function that updates the location array when changes are made to the database
     func startListening() {
         let user = Auth.auth().currentUser
