@@ -25,22 +25,31 @@ struct ARViewContainer: UIViewRepresentable {
         
         let arView = ARView(frame: .zero)
         
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        let bagAnchor = try!
-            Experience.loadBag()
-        let testAnchor = try!
-            Experience.loadTest()
+        // Load the scene for each artwork from the "Experience" Reality File
         
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        arView.scene.anchors.append(bagAnchor)
-        arView.scene.anchors.append(testAnchor)
+        let Anchor1 = try! Experience.loadAnchor1()
+        let Anchor2 = try! Experience.loadAnchor2()
+        let Anchor3 = try! Experience.loadAnchor3()
+        let Anchor4 = try! Experience.loadAnchor4()
+        // Add each anchor to the scene
+        arView.scene.anchors.append(Anchor1)
+        arView.scene.anchors.append(Anchor2)
+        arView.scene.anchors.append(Anchor3)
+        arView.scene.anchors.append(Anchor4)
         
-        testAnchor.actions.testAction.onAction = { _ in
-            checkIn(ArtID: 0)
+        // Call the checkIn function whenever the 'scanned' behaviour is triggered
+        Anchor1.actions.scanned.onAction = { _ in
+            checkIn(ArtID: 1)
         }
-
+        Anchor2.actions.scanned.onAction = { _ in
+            checkIn(ArtID: 2)
+        }
+        Anchor3.actions.scanned.onAction = { _ in
+            checkIn(ArtID: 3)
+        }
+        Anchor4.actions.scanned.onAction = { _ in
+            checkIn(ArtID: 4)
+        }
         
         
         return arView
@@ -51,8 +60,8 @@ struct ARViewContainer: UIViewRepresentable {
     
 }
 
+// Function to update the 'checkedIn' status of each art piece
 func checkIn(ArtID: (Int)) -> Void {
-    @ObservedObject var locationStore = LocationStore()
     let user = Auth.auth().currentUser
     if let user = user {
         let uid = user.uid
@@ -75,7 +84,6 @@ func checkIn(ArtID: (Int)) -> Void {
             }
         }
     }
-    print(locationStore)
 }
 
 struct AugView_Previews: PreviewProvider {

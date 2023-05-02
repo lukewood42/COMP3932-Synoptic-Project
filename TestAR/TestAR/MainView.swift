@@ -8,15 +8,12 @@
 import SwiftUI
 import RealityKit
 
-//import FirebaseFirestore
-//private var db = Firestore.firestore()
 
 struct MainView: View {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
 
-    //let citiesRef = db.collection("check-ins")
     let gradient = LinearGradient(colors: [Color.blue,Color.green],
                                       startPoint: .top, endPoint: .bottom)
     
@@ -25,41 +22,45 @@ struct MainView: View {
             ZStack {
                 
                 VStack {
+                    // Declaring an instance of the MapView struct
                     MapView()
-                    .navigationTitle(Text("Leeds Art").font(.custom("Questrial", size: 50)))
-                    .padding(.top)
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading){
-                            NavigationLink(destination: ListView()) {
-                                HStack {
-                                    Image(systemName: "list.bullet")
+                        .navigationTitle(Text("Leeds Art"))
+                        .padding(.top)
+                        .navigationBarTitleDisplayMode(.inline)
+                        // Populating the toolbar with navigation links to ListView and AugView
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading){
+                                NavigationLink(destination: ListView()) {
+                                    HStack {
+                                        Image(systemName: "list.bullet")
+                                    }
+                                }
+                            }
+                            ToolbarItem(placement: .navigationBarTrailing){
+                                NavigationLink(destination: AugView()) {
+                                    HStack {
+                                        Image(systemName: "arkit")
+                                    }
                                 }
                             }
                         }
-                        ToolbarItem(placement: .navigationBarTrailing){
-                            NavigationLink(destination: AugView()) {
-                                HStack {
-                                    Image(systemName: "arkit")
-                                }
-                            }
+                }
+                
+                VStack{
+                    Spacer()
+                    // Declaring a navigation link to ProfileView using the gear icon
+                    NavigationLink(destination: ProfileView()) {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "gear.circle.fill")
+                                .resizable()
+                                .foregroundColor(.gray)
+                                .frame(maxWidth: 40, maxHeight: 40)
+                                .padding()
                         }
                     }
                 }
             }
-            HStack {
-                Spacer()
-                NavigationLink(destination: ListView()) {
-                    HStack {
-                        Image(systemName: "gear.circle.fill")
-                            .resizable()
-                            .foregroundColor(.gray)
-                            .frame(maxWidth: 40, maxHeight: 40)
-                            .padding()
-                    }
-                }
-            }
-        
             
         }
         

@@ -23,5 +23,20 @@
     "libraryIdentifier" : "d0a20e0e93313c30900c61c37c4be76f",
     "format" : "image",
     "displayName" : "Testcard_F.jpeg"
+  },
+  {
+    "libraryIdentifier" : "ba8331ab5f1f26969430af2ebd7d3408",
+    "format" : "model",
+    "displayName" : "Anchor2.reality"
+  },
+  {
+    "libraryIdentifier" : "c582c1a174f1de87a3bf0c9d95c5231d",
+    "format" : "arObject",
+    "displayName" : "spire.arobject"
+  },
+  {
+    "libraryIdentifier" : "e91d60300adbcb4bc16e30534fe2be19",
+    "format" : "arObject",
+    "displayName" : "sign for art.arobject"
   }
 ]

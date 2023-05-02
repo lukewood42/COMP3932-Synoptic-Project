@@ -21,40 +21,45 @@ struct SignUpView: View {
         ZStack{
             gradient.opacity(0.25).ignoresSafeArea()
             VStack {
+                Text("Sign Up").font(.custom("Questrial", size: 50))
+                    
+            }
+            .frame(maxHeight: .infinity, alignment: .topTrailing)
+            .padding(.top, 120)
+            VStack {
+                // Declares the text field for users email
                 Spacer()
                 TextField("Email", text: $email)
                     .font(.custom("Questrial", size: 20))
                     .padding()
-                //.background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
-                
                 Divider()
                     .frame(height: 2)
                     .frame(width: 350)
                     .background(Color.black)
                 
+                // Declares the text field for users password
                 SecureField("Password", text: $password)
                     .font(.custom("Questrial", size: 20))
                     .padding()
-                //.background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
-                
                 Divider()
                     .frame(height: 2)
                     .frame(width: 350)
                     .background(Color.black)
                 
+                // Declares the text field for users password confirmation
+
                 SecureField("Confirm Password", text: $passwordConfirm)
                     .font(.custom("Questrial", size: 20))
                     .padding()
-                //.background(Color.gray.opacity(0.2))
                     .cornerRadius(10)
-                
                 Divider()
                     .frame(height: 2)
                     .frame(width: 350)
                     .background(Color.black)
                 
+                // Button that triggers sign up function
                 Button(action: { signup() }) {
                     Text("Sign Up")
                         .padding().frame(maxWidth: .infinity).background(Color.blue.opacity(0.2))
@@ -69,6 +74,7 @@ struct SignUpView: View {
         }
     }
     
+    // Sign up function that calls the Firebase API
     func signup() {
         if password != passwordConfirm {
             errorMessage = "Passwords do not match"

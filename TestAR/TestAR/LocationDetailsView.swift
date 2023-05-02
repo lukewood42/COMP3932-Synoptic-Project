@@ -21,6 +21,7 @@ struct LocationDetailsView: View {
     let location: Location
     var body: some View {
         ZStack(){
+            // Rendering the image of the artwork
             Image(location.name)
                 .resizable()
                 .scaledToFill()
@@ -30,6 +31,7 @@ struct LocationDetailsView: View {
                 Text(location.name)
                     .font(.custom("Questrial", size: 50))
                 ZStack{
+                    // Checking if the artwork has been succesfully checked in
                     if location.checkedIn {
                         Image(systemName:"circle")
                             .resizable()
@@ -42,6 +44,7 @@ struct LocationDetailsView: View {
                         .frame(width: 300, height: 300)
                         .clipShape(Circle())
                     
+                    // Displaying a checkmark if the artwork has previously been checked in
                     if location.checkedIn {
                         Image(systemName:"checkmark.seal.fill")
                             .resizable()
@@ -54,6 +57,8 @@ struct LocationDetailsView: View {
                 Spacer()
                 Text(location.artist)
                 Spacer()
+                
+                // Button used to favourite and unfavourite
                 Button(action: {
                     toggleFavourite(ArtID: location.id)
                 }, label: {
@@ -81,6 +86,7 @@ extension CLLocationCoordinate2D: CustomStringConvertible {
     }
 }
 
+// Function for toggling the favourite value in the database
 func toggleFavourite(ArtID: Int) {
     let user = Auth.auth().currentUser
     if let user = user {

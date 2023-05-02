@@ -15,6 +15,7 @@ struct ListView: View {
         ZStack{
             gradient.opacity(0.25).ignoresSafeArea().blur(radius: 1)
             VStack{
+                // List that displays each work of art, with a navigation link to the detailed view
                 List(locationStore.locations) { location in
                     NavigationLink(destination: LocationDetailsView(location: location)) {
                         HStack(spacing: 10) {
@@ -35,6 +36,20 @@ struct ListView: View {
                     }
                 }
                 .listStyle(.plain)
+                Spacer()
+                
+                // Defining the progress bar
+                ZStack{
+                    RoundedRectangle(cornerRadius: 25)
+                        .fill(.white)
+                    let completion = locationStore.calculateCompletion()
+                    let percentage = locationStore.calculatePercentage()
+                    let progressColour = locationStore.progressColour()
+                    ProgressView(value: completion) {
+                        Text(percentage + " complete")
+                    }.progressViewStyle(LinearProgressViewStyle(tint: progressColour))
+                        .padding()
+                }.frame(maxWidth: UIScreen.screenWidth-30, maxHeight: 60)
             }
         }
     }

@@ -10,9 +10,12 @@ import FirebaseAuth
 
 
 struct LoginView: View {
+    // Declaring local and binding variables for text fields
     @State var email = ""
     @State var password = ""
     @Binding var isLoggedIn: Bool
+    
+    // Boolean variable for showing the pop up alert
     @State private var showingAlert = false
     
     let gradient = LinearGradient(colors: [Color.blue,Color.green],
@@ -28,16 +31,15 @@ struct LoginView: View {
                 }
                 .frame(maxHeight: .infinity, alignment: .topTrailing)
                 .padding(.top, 120)
+                
+                // Populating the view with the email and password text entry fields
                 VStack{
                     Spacer()
                     
                     TextField("Email", text: $email)
                         .font(.custom("Questrial", size: 20))
                         .padding()
-                        //.background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
-
-                        
                     Divider()
                      .frame(height: 2)
                      .frame(width: 350)
@@ -46,13 +48,13 @@ struct LoginView: View {
                     SecureField("Password", text: $password)
                         .font(.custom("Questrial", size: 20))
                         .padding()
-                        //.background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
-                        
                     Divider()
                      .frame(height: 2)
                      .frame(width: 350)
                      .background(Color.black)
+                    
+                    // Buttons for login and sign up
                     HStack{
                         Button(action: { login() }) {
                             Text("Login").bold()
@@ -76,11 +78,10 @@ struct LoginView: View {
                 
                 .ignoresSafeArea(.keyboard)
             }
-            //.background(Color(red: 194/255, green: 234/255, blue: 186/255))
         }
-        
     }
-
+    
+    // Login function utilising Firebase API call
     func login() {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {

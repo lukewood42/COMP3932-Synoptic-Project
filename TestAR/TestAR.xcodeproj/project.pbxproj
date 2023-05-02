@@ -15,7 +15,6 @@
 		4508629529C4E1620073F39C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4508629229C4E1620073F39C /* MainView.swift */; };
 		4520486B29CB398200692BB9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520486A29CB398200692BB9 /* LoginView.swift */; };
 		4520486D29CCE28500692BB9 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520486C29CCE28500692BB9 /* SignUpView.swift */; };
-		4520486F29CD37D100692BB9 /* Neoneon-3zaD6.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4520486E29CD37D100692BB9 /* Neoneon-3zaD6.otf */; };
 		4520487229CD46FD00692BB9 /* Questrial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4520487129CD46FD00692BB9 /* Questrial-Regular.ttf */; };
 		453C120D29C4CCDB005E941D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 453C120C29C4CCDB005E941D /* FirebaseAnalytics */; };
 		453C120F29C4CCDB005E941D /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 453C120E29C4CCDB005E941D /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -82,7 +81,6 @@
 		4508629229C4E1620073F39C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4520486A29CB398200692BB9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4520486C29CCE28500692BB9 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		4520486E29CD37D100692BB9 /* Neoneon-3zaD6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neoneon-3zaD6.otf"; sourceTree = "<group>"; };
 		4520487029CD38AA00692BB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4520487129CD46FD00692BB9 /* Questrial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Questrial-Regular.ttf"; sourceTree = "<group>"; };
 		454E4E48290021B2009C3EF9 /* TestAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +190,6 @@
 				45F3EBF629C2576D006BA7CE /* LocationDetailsView.swift */,
 				4582C621299EADBA00E23352 /* AugView.swift */,
 				4520487129CD46FD00692BB9 /* Questrial-Regular.ttf */,
-				4520486E29CD37D100692BB9 /* Neoneon-3zaD6.otf */,
 				454E4E4F290021B2009C3EF9 /* Experience.rcproject */,
 				454E4E51290021B9009C3EF9 /* Assets.xcassets */,
 				454E4E53290021B9009C3EF9 /* Preview Content */,
@@ -366,7 +363,6 @@
 				454E4E52290021B9009C3EF9 /* Assets.xcassets in Resources */,
 				4508628F29C4E0570073F39C /* GoogleService-Info.plist in Resources */,
 				4520487229CD46FD00692BB9 /* Questrial-Regular.ttf in Resources */,
-				4520486F29CD37D100692BB9 /* Neoneon-3zaD6.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

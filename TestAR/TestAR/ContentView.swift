@@ -11,7 +11,7 @@ import FirebaseAuth
 
 struct ContentView: View {
     @State var isLoggedIn: Bool = false
-
+    // Changes the view based on whether or not the user is logged in
     var body: some View {
         if !isLoggedIn {
             LoginView(isLoggedIn: $isLoggedIn)
